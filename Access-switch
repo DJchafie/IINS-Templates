@@ -1,0 +1,46 @@
+consider that we have two vlans 10,20
+*********************************
+errdisable recovery cause all 
+errdisable recovery interval 300
+
+*********************************
+ip dhcp snooping vlan 
+ip dhcp snooping vlan 10,20
+ip arp inspection vlan 10,20
+ip arp inspection validate dst-mac ip 
+no ip dhcp snooping information option 
+
+ip dhcp snooping database flash:/dhcp-snooping-database.txt
+ip dhcp snooping database write-delay 30 
+
+************************
+inter range fa0/2-12 
+description this ports are for end-devices in vlan 10  
+no sh 
+switchport host
+switch mode access 
+switch access vlan 10
+spanning-tree portfast
+SWItCHPORT port-sec
+SWItCHPORT port-sec max 3
+SWItCHPORT port-sec violation sh vlan
+SWItCHPORT port-sec AGING TYPE INA
+SWItCHPORT port-sec AGING Time 30
+ip verify source
+ip verify source port-security
+ip dhcp snooping limit rate 30
+ip arp inspection limit rate 30
+storm-control bro level 50 30
+storm-control mul level pps 30k 20k
+storm-control action trap
+storm-control action sh
+NO LLDP REC
+NO LLDP TR
+no cdp en
+****************************
+inter fa 0/1
+description this link to the dhcp server
+swit mode trunk 
+ip dhcp snooping trust
+ip arp inspection trust
+exit
