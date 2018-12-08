@@ -96,6 +96,7 @@ save it in the file dhcp-snooping-database.txt every delay_in_sec
 (config)#address range <range_begin> <range_end>
 ```
 ### Make the switch and router trust end-devices with dhcp option 82 : 
+this command will make ip verify source port-security useful and operational 
 ```
 (config)#ip dhcp relay information trust-all
 ```
