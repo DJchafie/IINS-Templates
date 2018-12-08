@@ -44,3 +44,4 @@ swit mode trunk
 ip dhcp snooping trust
 ip arp inspection trust
 exit
+*******************************
