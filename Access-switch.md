@@ -6,10 +6,23 @@ In this lab we are going to configure a router on stick . where the router will 
 
 
 
-## Router basic configuration : 
+## Router basic configuration :
+### The creation of DHCP server for each vlan :
 ```
+(config)#ip dhcp pool <dhcp_pool_name>
+(config)#network <dhcp_pool_network> <dhcp_pool_netmask>
+(config)#default-router <default_gateway>
+```
+### The creation of subinterface for each vlan :
+```
+(config)#interface gigaEthernet0/0.<vlan_id> ! it's not mandatory to make it vlan_id
+(config-if)#no shutdown
+(config-if)#encapsulation dot1Q
+(config-if)#ip address <vlan_gateway> <netmask>
+```
+
 errdisable recovery cause all 
-```
+
 errdisable recovery interval 300
 
 ip dhcp snooping vlan 
