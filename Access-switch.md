@@ -1,7 +1,5 @@
 # Access Security :
 In this lab we are going to configure a router on stick . where the router will be a DHCP server and the switch is an access switch that contains two vlans .
-The main cause for this lab is to profesionally configure all security features using security best practices . 
-
 
 ## Router basic configuration :
 ### The creation of DHCP server for each vlan :
@@ -88,8 +86,16 @@ save it in the file dhcp-snooping-database.txt every delay_in_sec
 ## Using ip verify source with port security : 
 ### Creation of dhcp class :
 ```
-ip dhcp class <class_name>
-relay agent information
+(config)#ip dhcp class <class_name>
+(config)#relay agent information
 ```
 ### Assign the dhcp class to the dhcp server : 
-
+```
+(config)#ip dhcp pool <pool_name>
+(config)#class <class_name>
+(config)#address range <range_begin> <range_end>
+```
+### Make the switch and router trust end-devices with dhcp option 82 : 
+```
+(config)#ip dhcp relay information trust-all
+```
