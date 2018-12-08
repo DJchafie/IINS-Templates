@@ -27,15 +27,26 @@ In this lab we are going to configure a router on stick . where the router will 
 (config)#vlan <vlan_id>
 (config-vlan)#name <vlan_name>
 ```
-### Enabling dhcp snooping  
-ip dhcp snooping vlan 
-ip dhcp snooping vlan 10,20
-ip arp inspection vlan 10,20
-ip arp inspection validate dst-mac ip <h1><h1>
-no ip dhcp snooping information option 
-
+### Enabling dhcp snooping :
+```
+(config)#ip dhcp snooping vlan 
+(config)#ip dhcp snooping vlan [vlan_id]
+```
+### Enabling arp inspection :
+```
+(config)#ip arp inspection vlan [vlan_id]
+(config)#ip arp inspection validate dst-mac ip
+```
+### Removing the dhcp option 82 : 
+```
+(config)#no ip dhcp snooping information option 
+```
+### DHCP snooping database saving :
+if the access switch 
+```
 ip dhcp snooping database flash:/dhcp-snooping-database.txt
 ip dhcp snooping database write-delay 30 
+```
 
 
 inter range fa0/2-12 
