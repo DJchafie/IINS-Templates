@@ -1,11 +1,17 @@
 # Access Security :
 In this lab we are going to configure a router on stick . where the router will be a DHCP server and the switch is an access switch that contains two vlans .
 
-*********************************
+
+
+
+
+
+## Router basic configuration : 
+```
 errdisable recovery cause all 
+```
 errdisable recovery interval 300
 
-*********************************
 ip dhcp snooping vlan 
 ip dhcp snooping vlan 10,20
 ip arp inspection vlan 10,20
@@ -15,7 +21,7 @@ no ip dhcp snooping information option
 ip dhcp snooping database flash:/dhcp-snooping-database.txt
 ip dhcp snooping database write-delay 30 
 
-************************
+
 inter range fa0/2-12 
 description this ports are for end-devices in vlan 10  
 no sh 
@@ -38,7 +44,8 @@ storm-control action sh
 NO LLDP REC
 NO LLDP TR
 no cdp en
-****************************
+
+
 inter fa 0/1
 description this link to the dhcp server
 swit mode trunk 
