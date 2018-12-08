@@ -1,5 +1,7 @@
 # Access Security :
 In this lab we are going to configure a router on stick . where the router will be a DHCP server and the switch is an access switch that contains two vlans .
+The main cause for this lab is to profesionally configure all security features using security best practices . 
+
 
 ## Router basic configuration :
 ### The creation of DHCP server for each vlan :
