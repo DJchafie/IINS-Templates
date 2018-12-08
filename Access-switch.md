@@ -43,6 +43,7 @@ In this lab we are going to configure a router on stick . where the router will 
 ```
 ### DHCP snooping database saving :
 if the access switch goes down the snooping database will be deleted so we have to save it :
+<br>
 save it in the file dhcp-snooping-database.txt every delay_in_sec 
 ```
 ip dhcp snooping database flash:/dhcp-snooping-database.txt
