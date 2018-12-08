@@ -1,0 +1,13 @@
+enable
+conf t
+hostname {{your-hostname}}
+ip domaine-name {{domaine_name}}
+crypto key generate rsa
+!Configuring the SSH Server
+ip ssh version 2
+ip ssh {timeout seconds | authentication-retries number}
+line vty 0 5 
+transport input ssh
+exit
+
+ 
