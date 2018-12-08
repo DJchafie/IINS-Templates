@@ -1,4 +1,5 @@
-<h1> Access Security : <h1>
+# Access Security :
+In this lab we are going to configure a router on stick . where the router will be a DHCP server and the switch is an access switch that contains two vlans .
 
 *********************************
 errdisable recovery cause all 
@@ -8,7 +9,7 @@ errdisable recovery interval 300
 ip dhcp snooping vlan 
 ip dhcp snooping vlan 10,20
 ip arp inspection vlan 10,20
-ip arp inspection validate dst-mac ip 
+ip arp inspection validate dst-mac ip <h1><h1>
 no ip dhcp snooping information option 
 
 ip dhcp snooping database flash:/dhcp-snooping-database.txt
