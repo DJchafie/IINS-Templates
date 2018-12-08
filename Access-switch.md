@@ -1,11 +1,6 @@
 # Access Security :
 In this lab we are going to configure a router on stick . where the router will be a DHCP server and the switch is an access switch that contains two vlans .
 
-
-
-
-
-
 ## Router basic configuration :
 ### The creation of DHCP server for each vlan :
 ```
@@ -21,10 +16,18 @@ In this lab we are going to configure a router on stick . where the router will 
 (config-if)#ip address <vlan_gateway> <netmask>
 ```
 
-errdisable recovery cause all 
-
-errdisable recovery interval 300
-
+## Access switch basic configuration :
+### Commands to recover the port from errdisable :
+```
+(config)#errdisable recovery cause all 
+(config)#errdisable recovery interval 300
+```
+### The creation of vlans : 
+```
+(config)#vlan <vlan_id>
+(config-vlan)#name <vlan_name>
+```
+### Enabling dhcp snooping  
 ip dhcp snooping vlan 
 ip dhcp snooping vlan 10,20
 ip arp inspection vlan 10,20
