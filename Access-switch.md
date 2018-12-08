@@ -1,4 +1,4 @@
-consider that we have two vlans 10,20
+<h1> Access Security : 
 *********************************
 errdisable recovery cause all 
 errdisable recovery interval 300
@@ -21,12 +21,11 @@ switchport host
 switch mode access 
 switch access vlan 10
 spanning-tree portfast
-SWItCHPORT port-sec
-SWItCHPORT port-sec max 3
-SWItCHPORT port-sec violation sh vlan
-SWItCHPORT port-sec AGING TYPE INA
-SWItCHPORT port-sec AGING Time 30
-ip verify source
+switchport port-security
+switchport port-sec max 3
+switchport port-sec violation sh vlan
+switchport port-sec AGING TYPE INA
+switchport port-sec AGING Time 30
 ip verify source port-security
 ip dhcp snooping limit rate 30
 ip arp inspection limit rate 30
