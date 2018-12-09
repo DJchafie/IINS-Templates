@@ -1,0 +1,7 @@
+switchport port-security
+switch port-security max 3
+switchport port-security maximum 2 vlan access
+switchport port-security maximum 1 vlan voice
+switchport  port-security aging type inactivity
+switchport  port-security aging time 30
+switchport  port-security violation sh  vlan
